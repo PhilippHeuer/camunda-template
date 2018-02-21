@@ -1,0 +1,27 @@
+plugins {
+    id 'java'
+    id 'war'
+    id "io.spring.dependency-management" version "1.0.4.RELEASE"
+}
+
+group 'com.github.philippheuer.camunda'
+version '1.0-SNAPSHOT'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+dependencyManagement {
+    imports {
+        mavenBom 'org.camunda.bpm:camunda-bom:7.8.0'
+    }
+}
+
+dependencies {
+    providedCompile group: 'org.camunda.bpm', name: 'camunda-engine'
+    compile group: 'org.camunda.bpm', name: 'camunda-engine-spring'
+
+    compile 'org.springframework:spring-webmvc:5.0.2.RELEASE'
+}
