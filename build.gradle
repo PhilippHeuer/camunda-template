@@ -1,70 +1,34 @@
-plugins {
-    id 'java'
-    id 'war'
-    id 'io.spring.dependency-management' version '1.0.4.RELEASE'
-    id 'com.bmuschko.cargo' version '2.3'
-}
-
-group 'com.github.philippheuer.camunda'
-version '1.0-SNAPSHOT'
-
-sourceCompatibility = 1.8
-
-repositories {
-    mavenCentral()
-}
-
-dependencyManagement {
-    imports {
-        mavenBom 'org.camunda.bpm:camunda-bom:7.8.0'
+buildscript {
+    repositories {
+        jcenter()
+    }
+    dependencies {
+        classpath "io.spring.gradle:dependency-management-plugin:1.0.4.RELEASE"
     }
 }
 
-dependencies {
-    providedCompile group: 'org.camunda.bpm', name: 'camunda-engine'
-    compile group: 'org.camunda.bpm', name: 'camunda-engine-spring'
+subprojects {
+    apply plugin: 'java'
+    apply plugin: 'eclipse'
+    apply plugin: 'idea'
+    apply plugin: 'io.spring.dependency-management'
 
-    compile group: 'org.springframework', name: 'spring-webmvc', version: '5.0.2.RELEASE'
-    compile group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: '2.9.4'
-}
+    sourceCompatibility = 1.8
 
-// Tomcat Deployment Configuration
-ext {
-    camunda_hostname = "tomcat.localhost"
-    camunda_username = "tomcat"
-    camunda_password = "secret"
-}
-
-// Build WAR with custom name
-war {
-    archiveName = 'process.war'
-}
-
-// Cargo Configuration
-cargo {
-    containerId = 'tomcat8x'
-    port = 80
-    
-    deployable {
-        file = file('build/libs/process.war')
-        context = rootProject.name
+    repositories {
+        jcenter()
     }
-    
-    remote {
-        hostname = "$camunda_hostname"
-        username = "$camunda_username"
-        password = "$camunda_password"
-    }
-}
 
-// Deployment Tasks
-task deployProcessApplication {
-    group 'camunda'
-    description 'Builds the Process and runs the deployment.'
+    dependencyManagement {
+        imports {
+            mavenBom 'org.camunda.bpm:camunda-bom:7.8.0'
+        }
+        dependencies {
+            // Db-Drivers
+            dependency group: 'com.h2database', name: 'h2', version: '1.4.196'
 
-    dependsOn clean
-    dependsOn war
-    doLast {
-        tasks.cargoRedeployRemote.execute()
+            // Lombok
+            dependency group: 'org.projectlombok', name: 'lombok', version: '1.16.20'
+        }
     }
 }

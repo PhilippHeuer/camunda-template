@@ -1,0 +1,11 @@
+// In this section you declare the dependencies for your production and test code
+dependencies {
+    compile group: 'org.camunda.bpm', name: 'camunda-engine'
+    compile group: 'org.camunda.bpm', name: 'camunda-engine-spring'
+
+    compile group: 'org.springframework', name: 'spring-webmvc', version: '5.0.2.RELEASE'
+    compile group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: '2.9.4'
+
+    // - Getter & Setter
+    compileOnly group: 'org.projectlombok', name: 'lombok'
+}
