@@ -11,27 +11,28 @@
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="Gradle: org.camunda.bpm:camunda-engine-spring:7.8.0" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Gradle: org.camunda.bpm:camunda-engine:7.8.0" level="project" />
-    <orderEntry type="library" scope="PROVIDED" name="Gradle: org.camunda.bpm.model:camunda-bpmn-model:7.8.0" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Gradle: commons-logging:commons-logging:1.1.1" level="project" />
-    <orderEntry type="library" scope="PROVIDED" name="Gradle: org.camunda.commons:camunda-commons-utils:1.4.0" level="project" />
-    <orderEntry type="library" scope="PROVIDED" name="Gradle: org.camunda.bpm.dmn:camunda-engine-feel-api:7.8.0" level="project" />
-    <orderEntry type="library" scope="PROVIDED" name="Gradle: org.camunda.bpm.model:camunda-dmn-model:7.8.0" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Gradle: org.apache.commons:commons-email:1.2" level="project" />
-    <orderEntry type="library" scope="PROVIDED" name="Gradle: javax.mail:mail:1.4.1" level="project" />
-    <orderEntry type="library" scope="PROVIDED" name="Gradle: javax.activation:activation:1.1" level="project" />
-    <orderEntry type="library" scope="PROVIDED" name="Gradle: joda-time:joda-time:2.1" level="project" />
-    <orderEntry type="library" scope="PROVIDED" name="Gradle: org.springframework:spring-asm:3.1.2.RELEASE" level="project" />
-    <orderEntry type="library" scope="PROVIDED" name="Gradle: org.springframework:spring-core:3.1.2.RELEASE" level="project" />
-    <orderEntry type="library" scope="PROVIDED" name="Gradle: org.mybatis:mybatis:3.4.4" level="project" />
-    <orderEntry type="library" scope="PROVIDED" name="Gradle: org.camunda.bpm.model:camunda-cmmn-model:7.8.0" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Gradle: org.slf4j:slf4j-api:1.7.7" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Gradle: org.springframework:spring-beans:3.1.2.RELEASE" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Gradle: javax.mail:mail:1.4.1" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Gradle: org.camunda.bpm.dmn:camunda-engine-dmn:7.8.0" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Gradle: org.camunda.bpm.model:camunda-xml-model:7.8.0" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Gradle: org.camunda.commons:camunda-commons-utils:1.4.0" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Gradle: javax.activation:activation:1.1" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Gradle: org.camunda.bpm.dmn:camunda-engine-feel-juel:7.8.0" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Gradle: org.camunda.commons:camunda-commons-logging:1.4.0" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Gradle: joda-time:joda-time:2.1" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Gradle: org.camunda.commons:camunda-commons-typed-values:1.4.0" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Gradle: org.camunda.bpm.model:camunda-bpmn-model:7.8.0" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Gradle: org.camunda.bpm.dmn:camunda-engine-feel-api:7.8.0" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Gradle: org.springframework:spring-asm:3.1.2.RELEASE" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Gradle: org.springframework:spring-core:3.1.2.RELEASE" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Gradle: org.camunda.bpm.model:camunda-dmn-model:7.8.0" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Gradle: org.mybatis:mybatis:3.4.4" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Gradle: org.camunda.bpm.model:camunda-cmmn-model:7.8.0" level="project" />
     <orderEntry type="library" name="Gradle: org.springframework:spring-webmvc:5.0.2.RELEASE" level="project" />
+    <orderEntry type="library" name="Gradle: com.fasterxml.jackson.core:jackson-databind:2.9.4" level="project" />
     <orderEntry type="library" name="Gradle: org.springframework:spring-jdbc:3.1.2.RELEASE" level="project" />
     <orderEntry type="library" name="Gradle: org.springframework:spring-tx:3.1.2.RELEASE" level="project" />
     <orderEntry type="library" name="Gradle: commons-lang:commons-lang:2.4" level="project" />
@@ -42,6 +43,8 @@
     <orderEntry type="library" name="Gradle: org.springframework:spring-core:5.0.2.RELEASE" level="project" />
     <orderEntry type="library" name="Gradle: org.springframework:spring-expression:5.0.2.RELEASE" level="project" />
     <orderEntry type="library" name="Gradle: org.springframework:spring-web:5.0.2.RELEASE" level="project" />
+    <orderEntry type="library" name="Gradle: com.fasterxml.jackson.core:jackson-annotations:2.9.0" level="project" />
+    <orderEntry type="library" name="Gradle: com.fasterxml.jackson.core:jackson-core:2.9.4" level="project" />
     <orderEntry type="library" name="Gradle: aopalliance:aopalliance:1.0" level="project" />
     <orderEntry type="library" name="Gradle: commons-pool:commons-pool:1.5.4" level="project" />
     <orderEntry type="library" name="Gradle: org.springframework:spring-context:5.0.2.RELEASE" level="project" />
