@@ -3,7 +3,7 @@ buildscript {
         jcenter()
     }
     dependencies {
-        classpath "io.spring.gradle:dependency-management-plugin:1.0.4.RELEASE"
+        classpath "io.spring.gradle:dependency-management-plugin:1.0.6.RELEASE"
     }
 }
 
@@ -21,9 +21,15 @@ subprojects {
 
     dependencyManagement {
         imports {
-            mavenBom 'org.camunda.bpm:camunda-bom:7.8.0'
+            mavenBom 'org.camunda.bpm:camunda-bom:7.9.0'
         }
         dependencies {
+            // Camunda SpringBoot
+            dependency group: 'org.camunda.bpm.springboot', name: 'camunda-bpm-spring-boot-starter', version: '3.0.0'
+            dependency group: 'org.camunda.bpm.springboot', name: 'camunda-bpm-spring-boot-starter-test', version: '3.0.0'
+            dependency group: 'org.camunda.bpm.springboot', name: 'camunda-bpm-spring-boot-starter-rest', version: '3.0.0'
+            dependency group: 'org.camunda.bpm.springboot', name: 'camunda-bpm-spring-boot-starter-webapp', version: '3.0.0'
+
             // Db-Drivers
             dependency group: 'com.h2database', name: 'h2', version: '1.4.196'
 

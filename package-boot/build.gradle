@@ -1,12 +1,6 @@
 // Apply the gradle plugins
 plugins {
-    id 'org.springframework.boot' version '1.5.8.RELEASE'
-}
-
-dependencyManagement {
-    imports {
-        mavenBom 'org.camunda.bpm.springboot:camunda-bpm-spring-boot-starter:2.3.0'
-    }
+    id 'org.springframework.boot' version '2.0.5.RELEASE'
 }
 
 // In this section you declare the dependencies for your production and test code
@@ -15,38 +9,46 @@ dependencies {
     compile project(':' + rootProject.name + '-process-application')
 
 	// Camunda
-	compile group: 'org.camunda.bpm.springboot', name: 'camunda-bpm-spring-boot-starter', version: '2.3.0'
-	testCompile group: 'org.camunda.bpm.springboot', name: 'camunda-bpm-spring-boot-starter-test', version: '2.3.0'
-	//compile group:'org.camunda.bpm.springboot', name: 'camunda-bpm-spring-boot-starter-rest'
-    //compile group:'org.camunda.bpm.springboot', name: 'camunda-bpm-spring-boot-starter-webapp'
+	compile group: 'org.camunda.bpm.springboot', name: 'camunda-bpm-spring-boot-starter'
+	testCompile group: 'org.camunda.bpm.springboot', name: 'camunda-bpm-spring-boot-starter-test'
+	//compile group:'org.camunda.bpm.springboot', name: 'camunda-bpm-spring-boot-starter-rest', version: '3.0.0'
+    //compile group:'org.camunda.bpm.springboot', name: 'camunda-bpm-spring-boot-starter-webapp', version: '3.0.0'
 
     // Db-Driver
     compile group: 'com.h2database', name: 'h2', version: '1.4.196'
+
+    runtime("org.springframework.boot:spring-boot-properties-migrator")
 }
 
 // Spring Boot
 springBoot {
-    mainClass = 'org.camunda.bpm.CamundaProcessApplication'
+    mainClassName = 'org.camunda.bpm.CamundaProcessApplication'
+}
+
+// boot run configuration for dynamic profiles
+bootRun.ext.activeProfiles = 'common,db-local'
+bootRun {
+    doFirst {
+        jvmArgs = ["-Dspring.profiles.active=" + ext.activeProfiles]
+    }
 }
 
 // Run against a local in-memory database
-task bootRunWithLocalDb(type: org.springframework.boot.gradle.run.BootRunTask) {
+task bootRunWithLocalDb {
     group = 'Application'
-
-    doFirst() {
-        main = project.mainClassName
-        classpath = sourceSets.main.runtimeClasspath
-        systemProperty 'spring.profiles.active', 'common,db-local'
+    description "Alias to \":${bootRun.name}\" task: ${bootRun.description}"
+    doFirst {
+        bootRun.ext.activeProfiles = 'common,db-local'
     }
 }
+bootRunWithLocalDb.finalizedBy bootRun
 
 // Run against remote database
-task bootRunWithRemoteDb(type: org.springframework.boot.gradle.run.BootRunTask) {
+task bootRunWithRemoteDb {
     group = 'Application'
-
-    doFirst() {
-        main = project.mainClassName
-        classpath = sourceSets.main.runtimeClasspath
-        systemProperty 'spring.profiles.active', 'common,db-remote'
+    description "Alias to \":${bootRun.name}\" task: ${bootRun.description}"
+    doFirst {
+        bootRun.ext.activeProfiles = 'common,db-remote'
     }
 }
+bootRunWithRemoteDb.finalizedBy bootRun
