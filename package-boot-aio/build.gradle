@@ -34,7 +34,7 @@ bootRun {
 
 // Run against a local in-memory database
 task bootRunAllInOneWithLocalDb {
-    group = 'Application'
+    group = 'camunda'
     description "Alias to \":${bootRun.name}\" task: ${bootRun.description}"
     doFirst {
         bootRun.ext.activeProfiles = 'common,db-local'
@@ -44,7 +44,7 @@ bootRunAllInOneWithLocalDb.finalizedBy bootRun
 
 // Run against remote database
 task bootRunAllInOneWithRemoteDb {
-    group = 'Application'
+    group = 'camunda'
     description "Alias to \":${bootRun.name}\" task: ${bootRun.description}"
     doFirst {
         bootRun.ext.activeProfiles = 'common,db-remote'

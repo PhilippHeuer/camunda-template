@@ -14,6 +14,7 @@ dependencies {
 
 // Tomcat Deployment Configuration
 ext {
+    camunda_serverType = 'tomcat8x'
     camunda_hostname = "tomcat.localhost"
     camunda_username = "tomcat"
     camunda_password = "secret"
@@ -26,7 +27,7 @@ war {
 
 // Cargo Configuration
 cargo {
-    containerId = 'tomcat8x'
+    containerId = "$camunda_serverType"
     port = 80
 
     deployable {
@@ -42,13 +43,11 @@ cargo {
 }
 
 // Deployment Tasks
-task deployProcessApplication {
+task deployWarToSharedEngine {
     group 'camunda'
-    description 'Builds the Process and runs the deployment.'
+    description 'Builds the Process and runs the deployment to the shared engine.'
 
     dependsOn clean
     dependsOn war
-    doLast {
-        tasks.cargoRedeployRemote.execute()
-    }
+    dependsOn cargoRedeployRemote
 }
