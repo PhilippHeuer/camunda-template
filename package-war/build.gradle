@@ -1,7 +1,7 @@
 // Apply the gradle plugins
 plugins {
     id 'war'
-    id 'com.bmuschko.cargo' version '2.3'
+    id 'com.bmuschko.cargo' version '2.4'
 }
 
 dependencies {
