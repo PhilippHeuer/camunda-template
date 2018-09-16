@@ -7,10 +7,13 @@ plugins {
 dependencies {
     // Process Application
     compile project(':' + rootProject.name + '-process-application')
+    compile project(':' + rootProject.name + '-package-boot')
 
-	// Camunda
-	compile group: 'org.camunda.bpm.springboot', name: 'camunda-bpm-spring-boot-starter'
-	testCompile group: 'org.camunda.bpm.springboot', name: 'camunda-bpm-spring-boot-starter-test'
+	// REST API
+	compile group:'org.camunda.bpm.springboot', name: 'camunda-bpm-spring-boot-starter-rest'
+
+    // WebApps
+    compile group:'org.camunda.bpm.springboot', name: 'camunda-bpm-spring-boot-starter-webapp'
 
     // Db-Driver
     compile group: 'com.h2database', name: 'h2'
@@ -30,21 +33,21 @@ bootRun {
 }
 
 // Run against a local in-memory database
-task bootRunWithLocalDb {
+task bootRunAllInOneWithLocalDb {
     group = 'Application'
     description "Alias to \":${bootRun.name}\" task: ${bootRun.description}"
     doFirst {
         bootRun.ext.activeProfiles = 'common,db-local'
     }
 }
-bootRunWithLocalDb.finalizedBy bootRun
+bootRunAllInOneWithLocalDb.finalizedBy bootRun
 
 // Run against remote database
-task bootRunWithRemoteDb {
+task bootRunAllInOneWithRemoteDb {
     group = 'Application'
     description "Alias to \":${bootRun.name}\" task: ${bootRun.description}"
     doFirst {
         bootRun.ext.activeProfiles = 'common,db-remote'
     }
 }
-bootRunWithRemoteDb.finalizedBy bootRun
+bootRunAllInOneWithRemoteDb.finalizedBy bootRun

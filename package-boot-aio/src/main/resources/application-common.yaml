@@ -1,0 +1,26 @@
+spring.application.name: springProcessApplication
+spring:
+  datasource:
+    testWhileIdle: true
+    testOnBorrow: true
+    timeBetweenEvictionRunsMillis: 60000
+    validationQuery: SELECT 1
+camunda:
+  bpm:
+    enabled: true
+    default-serialization-format: application/json
+    history-level: auto
+    history-level-default: audit
+    application:
+      delete-upon-undeploy: false
+      scan-for-process-definitions: true
+      deploy-changed-only: true
+      resume-previous-versions: true
+    job-execution:
+      enabled: true
+      deployment-aware: true
+      core-pool-size: 3
+      max-pool-size: 20
+    metrics:
+      enabled: false
+      db-reporter-activate: false

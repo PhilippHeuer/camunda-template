@@ -1,0 +1,13 @@
+spring:
+  datasource:
+    url: jdbc:h2:mem:example-simple;MODE=Oracle;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
+camunda:
+  bpm:
+    # Setup Admin User
+    admin-user:
+      id: admin
+      password: admin
+      firstName: Admin
+    # Create Tasks Filter
+    filter:
+      create: All tasks

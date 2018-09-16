@@ -1,4 +1,4 @@
-include 'process-application', 'package-war', 'package-boot'
+include 'process-application', 'package-war', 'package-boot', 'package-boot-aio'
 
 rootProject.children.each {
     it.name = rootProject.name + "-" + it.name
