@@ -3,9 +3,14 @@ dependencies {
     compile group: 'org.camunda.bpm', name: 'camunda-engine'
     compile group: 'org.camunda.bpm', name: 'camunda-engine-spring'
 
-    compile group: 'org.springframework', name: 'spring-webmvc', version: '5.0.2.RELEASE'
     compile group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: '2.9.4'
 
     // - Getter & Setter
     annotationProcessor group: 'org.projectlombok', name: 'lombok'
+}
+
+// avoid errors caused by multiple logger-bindings
+configurations {
+    runtime.exclude group: "org.slf4j", module: "slf4j-log4j12"
+    compile.exclude group: "org.slf4j", module: "slf4j-log4j12"
 }

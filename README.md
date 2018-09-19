@@ -1,24 +1,23 @@
 # Camunda Project Template
 
-This project offers a easy method to build tomcat war deployment or use spring boot for local testing or as embedded process engine.
+This is a tempate for camunda projects.
 
 ## Details
 
-Technologies
-- Gradle
-- Spring
+The project contains 4 subprojects:
 
-Deployment
-- supports deployment into a shared engine (tomcat-war)
-- supports spring boot microservice deployment
-- supports spring boot with engine, webapps and rest api
-
-## Modules
-
-- Process Application (Process)
+- Process Application (Your Process)
 - Package WAR (builds the tomcat war deployment)
 - Package Boot (Spring Boot embedded process engine)
-- Package Boot (Spring Boot embedded process engine, with WebApp and REST-API)
+- Package Boot AllInOne (Spring Boot embedded process engine, with WebApp and REST-API)
+
+## Deployment
+
+Supports the following deployment methods from the same code base:
+
+- deployment into a shared engine (tomcat-war)
+- spring boot standalone
+- spring boot standalone with webapps and rest api
 
 ## License
 
