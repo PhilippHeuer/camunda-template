@@ -24,17 +24,23 @@ subprojects {
             mavenBom 'org.camunda.bpm:camunda-bom:7.9.0'
         }
         dependencies {
+            // Servlet
+            dependency group: 'javax.servlet', name: 'javax.servlet-api', version: '4.0.1'
+
             // Camunda SpringBoot
             dependency group: 'org.camunda.bpm.springboot', name: 'camunda-bpm-spring-boot-starter', version: '3.0.0'
             dependency group: 'org.camunda.bpm.springboot', name: 'camunda-bpm-spring-boot-starter-test', version: '3.0.0'
             dependency group: 'org.camunda.bpm.springboot', name: 'camunda-bpm-spring-boot-starter-rest', version: '3.0.0'
             dependency group: 'org.camunda.bpm.springboot', name: 'camunda-bpm-spring-boot-starter-webapp', version: '3.0.0'
 
+            // Spring
+            dependency group: 'org.springframework', name: 'spring-webmvc', version: '5.1.0.RELEASE'
+
             // Db-Drivers
-            dependency group: 'com.h2database', name: 'h2', version: '1.4.196'
+            dependency group: 'com.h2database', name: 'h2', version: '1.4.197'
 
             // Lombok
-            dependency group: 'org.projectlombok', name: 'lombok', version: '1.16.20'
+            dependency group: 'org.projectlombok', name: 'lombok', version: '1.18.2'
         }
     }
 }
