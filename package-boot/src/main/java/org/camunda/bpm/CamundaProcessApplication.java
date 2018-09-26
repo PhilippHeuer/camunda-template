@@ -24,7 +24,7 @@ import org.springframework.scheduling.annotation.EnableScheduling;
  */
 @SpringBootApplication
 @EnableScheduling
-@EnableProcessApplication("camundaTemplate")
+@EnableProcessApplication("processApplication")
 public class CamundaProcessApplication implements CommandLineRunner {
 
 	/**

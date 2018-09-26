@@ -5,8 +5,14 @@ plugins {
 }
 
 dependencies {
+    // Servlet API
+    providedCompile group: 'javax.servlet', name: 'javax.servlet-api'
+
     // Process Application
     compile project(':' + rootProject.name + '-process-application')
+
+    // Spring
+    compile group: 'org.springframework', name: 'spring-webmvc'
 
     // Camunda BPM - Engine
     providedCompile group: 'org.camunda.bpm', name: 'camunda-engine'
