@@ -33,8 +33,15 @@ subprojects {
             dependency group: 'org.camunda.bpm.springboot', name: 'camunda-bpm-spring-boot-starter-rest', version: '3.0.0'
             dependency group: 'org.camunda.bpm.springboot', name: 'camunda-bpm-spring-boot-starter-webapp', version: '3.0.0'
 
-            // Spring
-            dependency group: 'org.springframework', name: 'spring-webmvc', version: '5.1.0.RELEASE'
+            // Spring [Boot 2.0.5.RELEASE]
+            dependency group: 'org.springframework', name: 'spring-webmvc', version: '5.0.9.RELEASE'
+
+            // Dataformat
+            dependency group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: '2.9.7'
+
+            // Logging
+            dependency group: 'org.slf4j', name: 'slf4j-api', version: '1.7.25'
+            dependency group: 'org.slf4j', name: 'slf4j-jdk14', version: '1.7.25'
 
             // Db-Drivers
             dependency group: 'com.h2database', name: 'h2', version: '1.4.197'

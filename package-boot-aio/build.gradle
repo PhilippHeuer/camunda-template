@@ -21,7 +21,7 @@ dependencies {
 
 // Spring Boot
 springBoot {
-    mainClassName = 'org.camunda.bpm.CamundaProcessApplication'
+    mainClassName = 'application.CamundaProcessApplication'
 }
 
 // boot run configuration for dynamic profiles

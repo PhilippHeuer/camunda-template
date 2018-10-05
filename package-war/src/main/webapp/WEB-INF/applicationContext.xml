@@ -29,6 +29,7 @@
   
   <!-- Context -->
   <context:annotation-config />
+  <context:component-scan base-package="application" />
   <mvc:annotation-driven />
 
 </beans>

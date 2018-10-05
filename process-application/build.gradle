@@ -1,11 +1,17 @@
 // In this section you declare the dependencies for your production and test code
 dependencies {
+    // Camunda
     compile group: 'org.camunda.bpm', name: 'camunda-engine'
     compile group: 'org.camunda.bpm', name: 'camunda-engine-spring'
 
-    compile group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: '2.9.4'
+    // DataFormat
+    compile group: 'com.fasterxml.jackson.core', name: 'jackson-databind'
 
-    // - Getter & Setter
+    // Logging
+    compile group: 'org.slf4j', name: 'slf4j-api'
+
+    // Getter & Setter
+    compileOnly group: 'org.projectlombok', name: 'lombok'
     annotationProcessor group: 'org.projectlombok', name: 'lombok'
 }
 

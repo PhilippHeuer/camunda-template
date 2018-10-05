@@ -1,6 +1,4 @@
-package org.camunda.bpm;
-
-import java.lang.invoke.MethodHandles;
+package application;
 
 import org.apache.commons.lang.builder.ToStringBuilder;
 import org.apache.commons.lang.builder.ToStringStyle;
@@ -18,13 +16,15 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.event.EventListener;
 import org.springframework.scheduling.annotation.EnableScheduling;
 
+import java.lang.invoke.MethodHandles;
+
 /**
  * Process Application Core
  * 
  */
 @SpringBootApplication
 @EnableScheduling
-@EnableProcessApplication("processApplication")
+@EnableProcessApplication("camundaTemplate")
 public class CamundaProcessApplication implements CommandLineRunner {
 
 	/**

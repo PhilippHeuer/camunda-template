@@ -14,6 +14,9 @@ dependencies {
     // Spring
     compile group: 'org.springframework', name: 'spring-webmvc'
 
+    // Logging
+    providedCompile group: 'org.slf4j', name: 'slf4j-jdk14'
+
     // Camunda BPM - Engine
     providedCompile group: 'org.camunda.bpm', name: 'camunda-engine'
 }
@@ -56,4 +59,10 @@ task deployWarToSharedEngine {
     dependsOn clean
     dependsOn war
     dependsOn cargoRedeployRemote
+}
+
+// avoid errors caused by multiple logger-bindings, also the shared engine already has slf4j which would cause a conflict
+configurations {
+    runtime.exclude group: "org.slf4j"
+    compile.exclude group: "org.slf4j"
 }
