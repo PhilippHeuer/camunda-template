@@ -14,6 +14,7 @@ subprojects {
     apply plugin: 'io.spring.dependency-management'
 
     sourceCompatibility = 1.8
+    targetCompatibility = 1.8
 
     repositories {
         jcenter()
@@ -21,22 +22,22 @@ subprojects {
 
     dependencyManagement {
         imports {
-            mavenBom 'org.camunda.bpm:camunda-bom:7.9.0'
+            mavenBom 'org.camunda.bpm:camunda-bom:7.10.0'
         }
         dependencies {
             // Servlet
             dependency group: 'javax.servlet', name: 'javax.servlet-api', version: '4.0.1'
 
             // Camunda SpringBoot
-            dependency group: 'org.camunda.bpm.springboot', name: 'camunda-bpm-spring-boot-starter', version: '3.0.0'
-            dependency group: 'org.camunda.bpm.springboot', name: 'camunda-bpm-spring-boot-starter-test', version: '3.0.0'
-            dependency group: 'org.camunda.bpm.springboot', name: 'camunda-bpm-spring-boot-starter-rest', version: '3.0.0'
-            dependency group: 'org.camunda.bpm.springboot', name: 'camunda-bpm-spring-boot-starter-webapp', version: '3.0.0'
+            dependency group: 'org.camunda.bpm.springboot', name: 'camunda-bpm-spring-boot-starter', version: '3.2.1'
+            dependency group: 'org.camunda.bpm.springboot', name: 'camunda-bpm-spring-boot-starter-test', version: '3.2.1'
+            dependency group: 'org.camunda.bpm.springboot', name: 'camunda-bpm-spring-boot-starter-rest', version: '3.2.1'
+            dependency group: 'org.camunda.bpm.springboot', name: 'camunda-bpm-spring-boot-starter-webapp', version: '3.2.1'
 
             // Spring [Boot 2.0.5.RELEASE]
             dependency group: 'org.springframework', name: 'spring-webmvc', version: '5.0.9.RELEASE'
 
-            // Dataformat
+            // Data-Format
             dependency group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: '2.9.7'
 
             // Logging
@@ -47,7 +48,7 @@ subprojects {
             dependency group: 'com.h2database', name: 'h2', version: '1.4.197'
 
             // Lombok
-            dependency group: 'org.projectlombok', name: 'lombok', version: '1.18.2'
+            dependency group: 'org.projectlombok', name: 'lombok', version: '1.18.4'
         }
     }
 }
