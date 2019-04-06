@@ -1,7 +1,8 @@
 // Apply the gradle plugins
 plugins {
     id 'war'
-    id 'com.bmuschko.cargo' version '2.4'
+    id 'com.bmuschko.cargo' version '2.6'
+    id 'org.springframework.boot' version '2.1.3.RELEASE'
 }
 
 dependencies {
@@ -11,24 +12,36 @@ dependencies {
     // Process Application
     compile project(':' + rootProject.name + '-process-application')
 
-    // Spring
-    compile group: 'org.springframework', name: 'spring-webmvc'
-
     // Camunda BPM - Engine
-    providedCompile group: 'org.camunda.bpm', name: 'camunda-engine'
+    providedCompile (group: 'org.camunda.bpm', name: 'camunda-engine') {
+        exclude group: 'org.springframework.boot'
+        exclude group: 'org.springframework'
+    }
+
+    // Spring
+    compile group: 'org.springframework.boot', name: 'spring-boot-starter-web'
+    providedRuntime group: 'org.springframework.boot', name: 'spring-boot-starter-tomcat'
+    compile group: 'org.springframework', name: 'spring-beans'
+    compile group: 'org.springframework', name: 'spring-core'
 }
 
 // Tomcat Deployment Configuration
 ext {
-    camunda_serverType = 'tomcat8x'
+    camunda_serverType = 'tomcat9x'
     camunda_hostname = 'localhost'
     camunda_username = 'tomcat'
     camunda_password = 'tomcat'
 }
 
 // Build WAR with custom name
-war {
+bootWar {
+    excludeDevtools = false
     archiveName = 'process.war'
+}
+
+// Spring Boot
+springBoot {
+    mainClassName = 'application.Application'
 }
 
 // Cargo Configuration
@@ -54,7 +67,7 @@ task deployWarToSharedEngine {
     description 'Builds the Process and runs the deployment to the shared engine.'
 
     dependsOn clean
-    dependsOn war
+    dependsOn bootWar
     dependsOn cargoRedeployRemote
 }
 

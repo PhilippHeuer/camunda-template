@@ -34,21 +34,17 @@ subprojects {
             dependency group: 'org.camunda.bpm.springboot', name: 'camunda-bpm-spring-boot-starter-rest', version: '3.2.1'
             dependency group: 'org.camunda.bpm.springboot', name: 'camunda-bpm-spring-boot-starter-webapp', version: '3.2.1'
 
-            // Spring [Boot 2.0.5.RELEASE]
-            dependency group: 'org.springframework', name: 'spring-webmvc', version: '5.0.9.RELEASE'
-
             // Data-Format
-            dependency group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: '2.9.7'
+            dependency group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: '2.9.8'
 
             // Logging
-            dependency group: 'org.slf4j', name: 'slf4j-api', version: '1.7.25'
-            dependency group: 'org.slf4j', name: 'slf4j-jdk14', version: '1.7.25'
+            dependency group: 'org.slf4j', name: 'slf4j-api', version: '1.7.26'
 
             // Db-Drivers
-            dependency group: 'com.h2database', name: 'h2', version: '1.4.197'
+            dependency group: 'com.h2database', name: 'h2', version: '1.4.199'
 
             // Lombok
-            dependency group: 'org.projectlombok', name: 'lombok', version: '1.18.4'
+            dependency group: 'org.projectlombok', name: 'lombok', version: '1.18.6'
         }
     }
 }
