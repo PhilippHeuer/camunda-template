@@ -1,4 +1,9 @@
 // In this section you declare the dependencies for your production and test code
+
+repositories {
+    jcenter()
+}
+
 dependencies {
     // Camunda
     compile group: 'org.camunda.bpm', name: 'camunda-engine'

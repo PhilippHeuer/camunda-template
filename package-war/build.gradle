@@ -14,9 +14,6 @@ dependencies {
     // Spring
     compile group: 'org.springframework', name: 'spring-webmvc'
 
-    // Logging
-    providedCompile group: 'org.slf4j', name: 'slf4j-jdk14'
-
     // Camunda BPM - Engine
     providedCompile group: 'org.camunda.bpm', name: 'camunda-engine'
 }
@@ -24,9 +21,9 @@ dependencies {
 // Tomcat Deployment Configuration
 ext {
     camunda_serverType = 'tomcat8x'
-    camunda_hostname = "tomcat.localhost"
-    camunda_username = "tomcat"
-    camunda_password = "secret"
+    camunda_hostname = 'localhost'
+    camunda_username = 'tomcat'
+    camunda_password = 'tomcat'
 }
 
 // Build WAR with custom name
